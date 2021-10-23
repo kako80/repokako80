@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class test {
@@ -21,7 +22,12 @@ public class test {
 
                 }
             } else System.out.println("liczba nieprawidłowa");
-
+            Scanner scan2 = new Scanner(System.in);
+            System.out.println("press 'y' to continue:");
+            String letter = scan2.next();
+            if (Objects.equals(letter, "y")){
+                System.out.println();
+            } else break;
         }
     }
 
