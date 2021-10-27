@@ -26,7 +26,7 @@ public class calculator {
         System.out.println("Podaj drugą liczbę działania b:");
         float b = scan.nextFloat();
         System.out.println("wynik działania: " + a + " " + mathSign + " " + b + " = " + calc(a, b, mathSign));
-
+        scan.close();
     }
     public static float calc (float a, float b, String mathSign) {
         float v = 0;
