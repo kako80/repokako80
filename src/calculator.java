@@ -7,10 +7,10 @@ public class calculator {
 
         String mathSign;
         Scanner scan = new Scanner(System.in);
-        System.out.println("Podaj pierwszą liczbę działania a:");
+        System.out.print("Podaj pierwszą liczbę działania a:");
         float a = scan.nextFloat();
         for (;;) {
-            System.out.println("Podaj rodzaj działania:");
+            System.out.print("Podaj rodzaj działania:");
             mathSign = scan.next();
             switch (mathSign) {
                 case "+" -> System.out.println(" + ");
@@ -23,7 +23,7 @@ public class calculator {
                 System.out.println();
             } else break;
         }
-        System.out.println("Podaj drugą liczbę działania b:");
+        System.out.print("Podaj drugą liczbę działania b:");
         float b = scan.nextFloat();
         System.out.println("wynik działania: " + a + " " + mathSign + " " + b + " = " + calc(a, b, mathSign));
         scan.close();
