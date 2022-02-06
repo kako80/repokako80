@@ -1,3 +1,7 @@
+/* Napisz program, który pobierze od użytkownika jedną liczbę dodatnią (typu int) i obliczy sumę cyfr podanej liczby.
+Podpowiedź: aby rozpatrywać liczbę cyfra po cyfrze, możesz obliczać resztę z dzielenia liczby przez 10
+(aby uzyskać wartość ostatniej cyfry) i dzielić liczbę bez reszty przez 10 (żeby „przesuwać” się do kolejnej cyfry).
+ */
 import java.util.Scanner;
 
 public class sumOfDigits {
@@ -5,6 +9,7 @@ public class sumOfDigits {
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj liczbę: ");
         int number = scan.nextInt();
+        scan.close();
             System.out.print("suma cyfr liczby " + number + " wynosi: " + sum(number));
     }
     public static int sum(int number) {int i = 1; int sum1 = 0;

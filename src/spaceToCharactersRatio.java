@@ -1,3 +1,6 @@
+/* Napisz program, który pobierze od użytkownika tekst (zmienną typu String) i policzy jakim procentem wszystkich
+znaków tekstu był znak spacji, czyli ((liczba spacji) / (liczba wszystkich znaków)) * 100%
+ */
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -8,14 +11,15 @@ public class spaceToCharactersRatio {
         System.out.println("Podaj tekst:");
         String longSentence = scan.nextLine();
         System.out.println(longSentence);
-        int sum1 = 0,sum2 = 0;
+        scan.close();
+        int sum1 = 0, sum2 = 0;
         System.out.println("Liczba znaków w tekście: " + characters(longSentence, sum1));
         System.out.println("Liczba spacji w tekście: " + space(longSentence, sum2));
         double ratio = (((float)space(longSentence, sum2)) / ((float)characters(longSentence, sum1))) * 100;
-        System.out.println("tekst zawiera: " + ratio + " % spacji w tekście");
+        System.out.println( ratio + " % znaków w tekście to spacje");
     }
     public static int characters(String longSentence, int sum1){
-        for (int i = 0; i <= longSentence.length(); i++) {
+        for (int i = 0; i < longSentence.length(); i++) {
             sum1 = i;
         } return sum1;
     }

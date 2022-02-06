@@ -1,8 +1,16 @@
+/* Napisz program realizujący prosty kalkulator. Program powinien:
+a. pobrać pierwszą liczbę (typu float)
+b. pobrać jeden ze znaków: + - / *
+c. pobrać drugą liczbę (typu float)
+d. zwrócić wynik pobranego działania
+Jeśli użytkownik poda znak inny niż obsługiwane, program powinien wypisać „Błędny znak”.
+eśli wpisanego działania nie da się zrealizować (tj. jest niezgodne z zasadami matematyki),
+to program powinien wypisać napis „Błąd”.
+ */
 import java.util.Objects;
 import java.util.Scanner;
 
 public class calculator {
-
     public static void main(String[] args) {
 
         String mathSign;
@@ -17,26 +25,30 @@ public class calculator {
                 case "-" -> System.out.println(" - ");
                 case "/" -> System.out.println(" / ");
                 case "*" -> System.out.println(" * ");
-                default -> System.out.println("Błedny znak");
+                default -> System.out.println("Błędny znak");
             }
-            if (!Objects.equals(mathSign, "+")&&!Objects.equals(mathSign, "-")&&!Objects.equals(mathSign, "*")&&!Objects.equals(mathSign, "/")) {
+            if (!Objects.equals(mathSign, "+")&&!Objects.equals(mathSign, "-")&&!Objects.equals(mathSign, "*")
+                    &&!Objects.equals(mathSign, "/")) {
                 System.out.println();
             } else break;
         }
         System.out.print("Podaj drugą liczbę działania b:");
         float b = scan.nextFloat();
-        System.out.println("wynik działania: " + a + " " + mathSign + " " + b + " = " + calc(a, b, mathSign));
+        calc(a, b, mathSign);
         scan.close();
     }
-    public static float calc (float a, float b, String mathSign) {
-        float v = 0;
+    public static void calc (float a, float b, String mathSign) {
+        float v;
         switch (mathSign){
-            case "+" -> { v = a + b; }
-            case "-" -> { v = a - b; }
-            case "/" -> { v = a / b; }
-            case "*" -> { v = a * b; }
-            default -> System.out.println("Błąd");
-        } return v ;
+            case "+" -> {v = a + b;System.out.println("wynik działania: " + a + " " + mathSign + " " + b + " = " + v);}
+            case "-" -> {v = a - b;System.out.println("wynik działania: " + a + " " + mathSign + " " + b + " = " + v);}
+            case "/" -> {
+                if (b == 0) {
+                    System.out.println("Błąd");
+                } else
+            {v = a / b;System.out.println("wynik działania: " + a + " " + mathSign + " " + b + " = " + v);}
+            }
+            case "*" -> {v = a * b;System.out.println("wynik działania: " + a + " " + mathSign + " " + b + " = " + v);}
+        }
     }
-
 }
